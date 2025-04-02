@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="volume of a sphere program, PHP" />
+  <meta name="description" content="volume of a sphere answer, PHP" />
   <meta name="keywords" content="ICD2O, mths" />
   <meta name="author" content="Aimar Fernandez" />
   <meta name="viewport" content="width+device-width, initial-scale=.1.0" />
@@ -23,7 +23,6 @@
 </head>
 
 <body>
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <br />
@@ -35,26 +34,19 @@
       <div>
         <img src="./images/volume-of-sphere.png" alt="sphere volume equation">
       </div>
-      <h3>Enter the radius in mm:</h3>
-      <form action="answer.php" method="GET">
-        <!-- Numeric Textfield with Floating Label -->
-        <div
-          class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input
-            class="mdl-textfield__input" type="text"
-            pattern="-?[0-9]*(\.[0-9]+)?" name="radius" />
-          <label class="mdl-textfield__label" for="base-input"> Radius (mm)</label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
-        </div>
-        <br />
-        <!-- Raised button with ripple -->
-        <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-          type="submit">
-          Enter
-        </button>
-        <br />
-      </form>
+      <br />
+      <div class="page-content">
+        <?php
+        $radius = $_GET["radius"];
+        $volume = 3 / 4 * pi() * $radius ** 3;
+        echo "<p>The volume is: " . (round($volume, 2)) .  " cm³</p>";
+        ?>
+      </div>
+      <br />
+      <div class="page-content-answer">
+        <a href="./index.php"> Return ...<a>
+      </div>
+      <br />
     </main>
   </div>
 </body>
